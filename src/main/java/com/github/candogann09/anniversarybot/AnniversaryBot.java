@@ -4,6 +4,9 @@ package com.github.candogann09.anniversarybot;
 /*
 *
 * init bot stuff
+*
+* @param logger : generic logger for this bot
+*
 * */
 
 
@@ -18,5 +21,10 @@ public class AnniversaryBot {
     public static void main(String[] args) throws LoginException {
 
         new Bot().run();
+    }
+
+
+    public static Logger getLogger() {
+        return logger;
     }
 }

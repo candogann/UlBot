@@ -4,6 +4,11 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 import java.util.Locale;
 
+
+/*
+* General config implementation
+* @param dotenv : is for calling stuff from dotenv easier
+* */
 public class Config {
 
     private static final Dotenv dotEnv = Dotenv.load();
