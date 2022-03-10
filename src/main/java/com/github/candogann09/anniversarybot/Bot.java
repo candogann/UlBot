@@ -25,7 +25,9 @@ public class Bot {
     private static DBType dbType = DBType.SQLite;
     private static DatabaseMain database = null;
 
-
+    public static DatabaseMain getDatabase() {
+        return database;
+    }
 
     void run() throws LoginException {
 
@@ -44,23 +46,7 @@ public class Bot {
                 .setPrefix(Config.get("PREFIX"))
                 .addCommands(new Shutdown());
 
-        if (enableDatabase) database = new DatabaseMain(dbType);
-        if (database != null) {
-            if (!database.isConnected()) {
-                database = null;
-                System.out.println("[ERROR] Database connection failed. Continuing without database.");
-            } else {
-                database.update(
-                        "CREATE TABLE IF NOT EXISTS guildprefix (guildId VARCHAR(18) NOT NULL, prefix VARCHAR(8) NOT "
-                                + "NULL);");
-                database.update(
-                        "CREATE TABLE IF NOT EXISTS statistics (guildId VARCHAR(18) NOT NULL, statName VARCHAR(64) "
-                                + "NOT NULL, statValue VARCHAR(512) NOT NULL);");
-                database.update(
-                        "CREATE TABLE IF NOT EXISTS guildsettings (guildId VARCHAR(18) NOT NULL, setting VARCHAR(32) "
-                                + "NOT NULL, value VARCHAR(128) NOT NULL);");
-            }
-        }
+
 
 
         JDABuilder builder = JDABuilder.createLight(Config.get("TOKEN"))

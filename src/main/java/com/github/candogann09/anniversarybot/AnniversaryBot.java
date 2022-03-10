@@ -18,11 +18,15 @@ import javax.security.auth.login.LoginException;
 public class AnniversaryBot {
 
     private static final Logger logger = (Logger) LoggerFactory.getLogger("Anniversary Bot");
+    private static final Bot bot = new Bot();
     public static void main(String[] args) throws LoginException {
 
-        new Bot().run();
+        bot.run();
     }
 
+    public static Bot getBot() {
+        return bot;
+    }
 
     public static Logger getLogger() {
         return logger;
