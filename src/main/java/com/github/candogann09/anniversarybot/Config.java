@@ -7,7 +7,6 @@ import java.util.Locale;
 
 /*
 * General config implementation
-* @param dotenv : is for calling stuff from dotenv easier
 * */
 public class Config {
 

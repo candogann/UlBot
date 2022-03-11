@@ -2,12 +2,12 @@ package com.github.candogann09.anniversarybot;
 
 
 /*
-*
-* init bot stuff
-*
-* @param logger : generic logger for this bot
-*
-* */
+ *
+ * init bot stuff
+ *
+ * @param logger : generic logger for this bot
+ *
+ * */
 
 
 import org.slf4j.Logger;
@@ -17,18 +17,15 @@ import javax.security.auth.login.LoginException;
 
 public class AnniversaryBot {
 
-    private static final Logger logger = (Logger) LoggerFactory.getLogger("Anniversary Bot");
-    private static final Bot bot = new Bot();
+    public static final Logger log = (Logger) LoggerFactory.getLogger("Anniversary Bot"); // see line 22, we wanna use global logger @TODO: Add logger to all actions
+    public static final Bot bot = new Bot(); // this is public so we can take it from everywhere without having to add it to all classes
+
     public static void main(String[] args) throws LoginException {
 
         bot.run();
     }
 
-    public static Bot getBot() {
-        return bot;
-    }
-
-    public static Logger getLogger() {
-        return logger;
-    }
+    // #GETTERS
+    //public static Bot getBot() {return bot;} // we dont need it anymore
+    public static Logger getLogger() {return log;}
 }

@@ -7,8 +7,7 @@ import net.dv8tion.jda.api.Permission;
 
 public class Shutdown extends Command {
 
-    public Shutdown()
-    {
+    public Shutdown() {
         this.name = "shutdown";
         this.help = "Turns the bot off.";
         this.category = Categories.ADMIN;
@@ -17,6 +16,7 @@ public class Shutdown extends Command {
         this.ownerCommand = false;
         this.guildOnly = false;
     }
+
     @Override
     protected void execute(CommandEvent event) {
 
