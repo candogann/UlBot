@@ -3,6 +3,7 @@ package com.github.candogann09.anniversarybot.Database;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 
 import static com.github.candogann09.anniversarybot.AnniversaryBot.log;
 
@@ -110,10 +111,13 @@ public class DatabaseCore {
 
     //Database actions, @TODO: Make them a seperate class, test if that fucks things up.
 
-    public ResultSet getDataFromTable(String table, String column) { //@TODO: rewrite this
-        String sql = "SELECT "+ column +", FROM "+ table;
+    public  ResultSet getDataFromTable(String table, String column) { //@TODO: rewrite this
+        String sql = "SELECT "+ column +" FROM "+ table;
         try {
-            return query(sql);
+
+            ResultSet rs = this.query(sql);
+
+            return rs;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -143,6 +147,17 @@ public class DatabaseCore {
 
         log.error("Something went wrong in isKeyInTable! May god help you because we don't know what went wrong lol. Returning false.");
         return false;
+    }
+
+    public static String[] convertResultSetIntoArray(ResultSet rs) { // typically we only get one column of resultset a time, if it leads to perf issues it will be dealt
+        try {
+            String[] ix = new String[rs.getMetaData().getColumnDisplaySize(1)];
+            System.out.println(ix.length);
+        } catch(Exception e) {
+            //TODO: exception handling
+        }
+
+        return null;// return null for a while cuz reasons
     }
 
     // @GETTERS

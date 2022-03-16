@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="AnniversaryBot" />
+        <module name="UlBot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="UlBot" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
