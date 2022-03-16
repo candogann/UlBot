@@ -1,0 +1,25 @@
+# Default ignored files
+/.idea/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+.env
+.env.example
+# Compiled class file
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Other things
+target/*
+.idea/*
+*.iml
